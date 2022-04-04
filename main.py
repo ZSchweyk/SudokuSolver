@@ -39,10 +39,15 @@ def solve_sudoku(puzzle):
     # Step 2: if there is a place to put a number, then make a guess between 1 and 9
     for guess in range(1, 10):
         # Step 3: check if this is a valid guess
+        print(f"Checking {guess} at ({row}, {col})")
         if is_valid(puzzle, guess, row, col):
+            print("Valid")
             puzzle[row][col] = guess
 
+            # if the rest of the puzzle can be solved with that guess, return True
+            # otherwise, reset that guess back to -1
             if solve_sudoku(puzzle):
+                print("can solve the rest of the puzzle")
                 return True
 
         puzzle[row][col] = -1
@@ -63,6 +68,7 @@ if __name__ == '__main__':
         [6, 7, -1,   1, -1, 5,   -1, 4, -1],
         [1, -1, 9,   -1, -1, -1,   2, -1, -1]
     ]
+    print(example_board)
     print(solve_sudoku(example_board))
     print(example_board)
 
