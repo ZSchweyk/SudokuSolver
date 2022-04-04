@@ -7,6 +7,7 @@ def find_next_empty(puzzle):
 
     return None, None
 
+
 def is_valid(puzzle, guess, row, col):
     row_vals = puzzle[row]
     if guess in row_vals:
@@ -24,6 +25,7 @@ def is_valid(puzzle, guess, row, col):
                 return False
 
     return True
+
 
 def solve_sudoku(puzzle):
     # solve sudoku using backtracking
@@ -54,23 +56,21 @@ def solve_sudoku(puzzle):
 
     return False
 
+
 if __name__ == '__main__':
     example_board = [
-        [3, 9, -1,   -1, 5, -1,   -1, -1, -1],
-        [-1, -1, -1,   2, -1, -1,   -1, -1, 5],
-        [-1, -1, -1,   7, 1, 9,   -1, 8, -1],
+        [3, 9, -1, -1, 5, -1, -1, -1, -1],
+        [-1, -1, -1, 2, -1, -1, -1, -1, 5],
+        [-1, -1, -1, 7, 1, 9, -1, 8, -1],
 
-        [-1, 5, -1,   -1, 6, 8,   -1, -1, -1],
-        [2, -1, 6,   -1, -1, 3,   -1, -1, -1],
-        [-1, -1, -1,   -1, -1, -1,   -1, -1, 4],
+        [-1, 5, -1, -1, 6, 8, -1, -1, -1],
+        [2, -1, 6, -1, -1, 3, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, 4],
 
-        [5, -1, -1,   -1, -1, -1,   -1, -1, -1],
-        [6, 7, -1,   1, -1, 5,   -1, 4, -1],
-        [1, -1, 9,   -1, -1, -1,   2, -1, -1]
+        [5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [6, 7, -1, 1, -1, 5, -1, 4, -1],
+        [1, -1, 9, -1, -1, -1, 2, -1, -1]
     ]
     print(example_board)
     print(solve_sudoku(example_board))
     print(example_board)
-
-
-
